@@ -1,0 +1,12 @@
+@import 'constants';
+
+.no-margin { margin: 0px !important; }
+.bold { font-weight: bold; }
+
+.fl-root { display: flex; }
+.fl-col { flex-direction: column; }
+
+.fl-1 { flex: 1; }
+.fl-init { flex: initial; }
+
+.gap-100 { gap: $space-100; }
