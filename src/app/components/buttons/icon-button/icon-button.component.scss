@@ -2,15 +2,28 @@ button {
     position: relative;
     width: 48px;
     height: 48px;
-    
+
     text-align: center;
     vertical-align: bottom;
+
+    color: white;
+    border: none;
+    border-radius: 3px;
+    //TODO: Convert first to hsl and move to variables in the _constants.scss file
+    background: linear-gradient(#1C7CE0, hsl(256, 100%, 16%));
+
     cursor: pointer;
-    
-    span, i {
+
+    span,
+    i {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    .material-symbols-rounded {
+        font-variation-settings:
+            'FILL' 1;
     }
 }
