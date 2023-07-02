@@ -11,11 +11,9 @@ button {
     border-radius: 3px;
     //TODO: Convert first to hsl and move to variables in the _constants.scss file
     background: linear-gradient(#1C7CE0, hsl(256, 100%, 16%));
-
     cursor: pointer;
 
-    span,
-    i {
+    span, i {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -25,5 +23,12 @@ button {
     .material-symbols-rounded {
         font-variation-settings:
             'FILL' 1;
+    }
+
+    &.rounded { border-radius: 48px; }
+    &.hover { 
+        transition: transform 0.25s ease-in-out;
+        
+        &:hover, &:focus { transform: translateY(-5px); }
     }
 }

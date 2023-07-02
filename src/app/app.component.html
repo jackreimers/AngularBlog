@@ -1,3 +1,15 @@
 <app-header [scrollPercentage]="scrollPercentage$ | async"></app-header>
 
-<router-outlet></router-outlet>
+<div class="container">
+
+    <main class="fl-1">
+        <router-outlet></router-outlet>
+    </main>
+    
+    <app-footer>
+        <app-icon-button [icon]="'hourglass_empty'" [classes]="'rounded hover'"></app-icon-button>
+        <app-icon-button [icon]="'hourglass_empty'" [classes]="'rounded hover'"></app-icon-button>
+        <app-icon-button [icon]="'hourglass_empty'" [classes]="'rounded hover'"></app-icon-button>
+    </app-footer>
+
+</div>
