@@ -19,7 +19,6 @@ export class ScrollService {
         const percentage = (root.scrollTop || body.scrollTop) / ((root.scrollHeight|| body.scrollHeight) - root.clientHeight) * 100;
 
         this.scrollEvent.emit(percentage);
-        console.log(percentage);
     }
 
     scrollToTop(): void {

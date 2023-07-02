@@ -14,8 +14,7 @@ header {
     
     &.scrolled .content {
         padding: $space-100 $space-200;
-        //TODO: Move to a variable in the _constants.scss file
-        border-color: hsl(0, 0%, 83%);;
-        box-shadow: 0px 6px 14px hsla(0deg, 0%, 0%, 0.05);
+        border-color: $light-grey;
+        box-shadow: 0px 0px 10px hsla(0deg, 0%, 0%, 0.05);
     }
 }
