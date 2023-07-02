@@ -20,7 +20,7 @@ h5, .h5 { font-size: 1.125rem; }
 h6, .h6 { font-size: 1rem; }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-    margin: 0px;
+    margin: 0px 0px 0.5em 0px;
     
     font-style: normal;
     font-weight: 600; 
@@ -28,7 +28,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 p {
-    margin: 1em 0px;
+    margin: 0px 0px 0.5em 0px;
     font-size: 1rem;
 
     span { vertical-align: text-bottom; }

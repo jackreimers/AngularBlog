@@ -10,4 +10,10 @@ body {
     height: 100%;
 }
 
+.container {
+    max-width: calc(1200px + ($spacing-300 * 2));
+    margin: 0px auto;
+    padding: $spacing-300;
+}
+
 .inset {box-shadow: inset 0px 2px 7px hsla(0, 0%, 0%, 0.08);}
