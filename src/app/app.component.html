@@ -1,10 +1,4 @@
-<app-header [scrollPercentage]="scrollPercentage$ | async">
-    <app-icon-button class="buttons" [icon]="'dark_mode'"></app-icon-button>
-    <app-icon-button class="buttons" [icon]="'light_mode'"></app-icon-button>
-    <app-icon-button class="buttons" [icon]="'menu'" (onClick)="openMenu()"></app-icon-button>
-</app-header>
-
-<app-navigation-menu [open]="menuOpen | async"></app-navigation-menu>
+<app-header [scrollPercentage]="scrollPercentage$ | async"></app-header>
 
 <div class="root">
 

@@ -7,7 +7,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { IconButtonComponent } from './components/buttons/icon-button/icon-button.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +15,6 @@ import { NavigationMenuComponent } from './components/navigation-menu/navigation
         IconButtonComponent,
         BannerComponent,
         FooterComponent,
-        NavigationMenuComponent
     ],
     imports: [
         BrowserModule,
