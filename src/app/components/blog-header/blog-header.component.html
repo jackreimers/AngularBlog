@@ -1,0 +1,20 @@
+<div *ngIf='metadata' class='blog-head'>
+    <p>{{metadata.date}}</p>
+    <a href='javascript:void(0)' class='title-link'>
+        <span class='link-icon material-symbols-rounded'>link</span>
+        <h1 class='title'>{{metadata.title}}</h1>
+    </a>
+    <div class='tags'>
+        <a *ngFor='let tag of metadata.tags' routerLink='/category/{{tag.replace(" ", "").toLowerCase()}}'>{{tag}}</a>
+    </div>
+    <div class='author-box fl-root'>
+        <div class='headshot fl-init'></div>
+        <div class='fl-root author'>
+            <div></div>
+            <div class='details'>
+                <p class='text-gradient name'>{{metadata.author}}</p>
+                <a href="{{metadata.socialUrl}}">{{metadata.socialName}}</a>
+            </div>
+        </div>
+    </div>
+</div>

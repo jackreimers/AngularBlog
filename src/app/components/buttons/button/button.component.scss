@@ -1,0 +1,55 @@
+@import "src/styles/base/constants";
+
+button {
+    padding: 0;
+    overflow: hidden;
+    //padding: $spacing-75 $spacing-100;
+    
+
+    //border: 4px solid gray;
+    border: none;
+    border-radius: 6px;
+    
+    //color: white;
+    //background: linear-gradient(to bottom, #1C7CE0, hsl(256deg, 100%, 16%));
+    
+    .wrapper {
+        background: linear-gradient(to bottom, #1C7CE0, hsl(256deg, 100%, 16%));
+        padding: 4px;
+    }
+    
+    .inner {
+        background: white;
+        border-radius: 3px;
+        
+        transition: background-color 0.5s ease;
+    }
+    
+    p {
+        margin: 0;
+        padding: $spacing-75 $spacing-100;
+        
+        line-height: 1;
+        font-size: 1.25rem;
+        font-weight: 700;
+        
+        transition: color 0.5s ease;
+    }
+    
+    &:hover, &:focus {
+        cursor: pointer;
+        
+        .inner {
+            background: transparent;
+        }
+        
+        p {
+            color: white;
+            
+            background: unset;
+            background-clip: unset;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+        }
+    }
+}

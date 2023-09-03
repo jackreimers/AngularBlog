@@ -1,0 +1,2 @@
+<app-blog-header [metadata]="(blogPost$ | async)?.metadata"/>
+<markdown [data]="(blogPost$ | async)?.content"/>

@@ -1,0 +1,50 @@
+@import "src/styles/base/constants";
+
+a {
+    display: grid;
+    grid-template-rows: 1.75fr 4px 1fr;
+
+    border: 1px solid $grey-200;
+    border-radius: 3px;
+    
+    max-width: 400px;
+
+    transition: 0.4s ease;
+
+    .img-container {
+        background: $grey-100;
+    }
+
+    .border {
+        background: linear-gradient(to right, #1C7CE0, hsl(256deg, 100%, 16%))
+    }
+
+    .content {
+        padding: $spacing-150;
+
+        .more-hover {
+            margin: $spacing-150 0px 0px 0px;
+            
+            font-weight: 600;
+            text-transform: uppercase;
+
+            color: $grey-600;
+
+            span {
+                opacity: 0;
+                transform: translateX(-50%);
+                transition: 0.6s ease;
+            }
+        }
+    }
+
+    &:hover, &:focus {
+
+        transform: translateY(-6px);
+        
+        .content .more-hover span {
+            opacity: 1;
+            transform: translateX(0%);
+        }
+    }
+}

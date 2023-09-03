@@ -1,0 +1,67 @@
+@import "src/styles/base/constants";
+
+.blog-head {
+    margin-bottom: $spacing-400;
+
+    .title-link {
+        display: inline-block;
+        position: relative;
+
+        &:hover .link-icon {
+            opacity: 1;
+            transform: translate(-120%, -50%);
+        }
+
+        .link-icon {
+            position: absolute;
+            top: 50%;
+
+            font-size: 48px;
+            opacity: 0;
+
+            transform: translate(-50%, -50%);
+            transition: transform 0.5s ease, opacity 0.2s ease;
+        }
+
+        .title {
+            margin: 0;
+        }
+    }
+
+    .author {
+        display: grid;
+        grid-template-rows: 1fr auto 1fr;
+
+        .name {
+            margin: 0 0 $spacing-25 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+    }
+
+    .headshot {
+        width: 64px;
+        height: 64px;
+        margin-right: $spacing-100;
+
+        border: 1px solid $grey-400;
+        border-radius: 32px;
+    }
+
+    .tags {
+        display: flex;
+        margin: $spacing-75 0;
+        gap: $spacing-50;
+        
+        a {
+            padding: $spacing-50 $spacing-100;
+
+            color: gray;
+            border: 1px solid gray;
+            border-radius: 4px;
+            
+            transition: color 0.4s ease;
+        }
+    }
+}

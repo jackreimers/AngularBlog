@@ -1,15 +1,15 @@
-<app-header [scrollPercentage]="scrollPercentage$ | async"></app-header>
-
-<div class="root">
-
-    <main class="fl-1">
-        <router-outlet></router-outlet>
+<app-header [scrollPercentage]='scrollPercentage$ | async'></app-header>
+<app-side-nav/>
+<div class='root'>
+    <app-focus-blocker [isVisible]='blockerIsVisible$ | async'/>
+    <main class='fl-1'>
+        <app-container>
+            <router-outlet/>
+        </app-container>
     </main>
-    
     <app-footer>
-        <app-icon-button [icon]="'hourglass_empty'" [classes]="'rounded hover'"></app-icon-button>
-        <app-icon-button [icon]="'hourglass_empty'" [classes]="'rounded hover'"></app-icon-button>
-        <app-icon-button [icon]="'hourglass_empty'" [classes]="'rounded hover'"></app-icon-button>
+        <app-icon-button [icon]="'hourglass_empty'" [classes]="'rounded hover'"/>
+        <app-icon-button [icon]="'hourglass_empty'" [classes]="'rounded hover'"/>
+        <app-icon-button [icon]="'hourglass_empty'" [classes]="'rounded hover'"/>
     </app-footer>
-
 </div>

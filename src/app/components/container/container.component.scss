@@ -1,0 +1,12 @@
+@import "src/styles/base/constants";
+
+section {
+    //TODO: Clean up
+    .inner {
+        margin: 0 auto;
+        padding: $spacing-300;
+        max-width: calc(1200px + ($spacing-300 * 2));
+    }
+
+    &.span .inner { max-width: unset; }
+}

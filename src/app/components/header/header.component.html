@@ -1,16 +1,4 @@
-<div class="side-nav" [class.open]="menuOpen">
-    <nav class="inner">
-        <ul>
-            <li><app-icon-button [icon]="'close'" (onClick)="setMenuOpen(false)"></app-icon-button></li>
-
-            <li><a href="javascript:void(0)" class="h4 no-margin">Home</a></li>
-            <li><a href="javascript:void(0)" class="h4 no-margin">Blog</a></li>
-            <li><a href="javascript:void(0)" class="h4 no-margin">About</a></li>
-        </ul>
-    </nav>
-</div>
-
-<header [ngClass]="{'scrolled' : this.scrollPercentage != null && this.scrollPercentage > 0}">
+<header [ngClass]="{'scrolled' : scrollPercentage != null && this.scrollPercentage > 0}">
     <div class="fl-root content">
         <div class="fl-root fl-col">
             <div class="fl-1"></div>
@@ -20,12 +8,13 @@
         <div class="fl-1"></div>
         <div class="fl-root fl-col">
             <div class="fl-1"></div>
-            <nav class="fl-root gap-100">
-                <app-icon-button [icon]="'dark_mode'"></app-icon-button>
-                <app-icon-button [icon]="'light_mode'"></app-icon-button>
-                <app-icon-button [icon]="'menu'" (onClick)="setMenuOpen(true)"></app-icon-button>
+            <nav class="fl-root gap-50">
+                <app-icon-button [icon]="'dark_mode'" [classes]="'text-gradient'"></app-icon-button>
+                <app-icon-button [icon]="'menu'" [classes]="'text-gradient'" (onClick)='menuService.open()'></app-icon-button>
             </nav>
             <div class="fl-1"></div>
         </div>
     </div>
 </header>
+
+<div [ngStyle]="{'padding-top.px': offset}"></div>

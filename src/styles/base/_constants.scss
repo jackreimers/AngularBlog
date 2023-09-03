@@ -1,9 +1,20 @@
+$spacing-25: 4px;
 $spacing-50: 8px;
 $spacing-75: 12px;
 $spacing-100: 16px;
 $spacing-150: 24px;
 $spacing-200: 32px;
-$spacin-250: 40px;
+$spacing-250: 40px;
 $spacing-300: 48px;
+$spacing-400: 64px;
 
-$light-grey:  hsl(0, 0%, 83%);
+$grey-100: hsl(0deg, 0%, 96%);
+$grey-200: hsl(0, 0%, 83%);
+$grey-400: hsl(0, 0%, 75%);
+$grey-500: hsl(0, 0%, 60%);
+$grey-600: hsl(0deg, 0%, 40%);
+$grey-700: hsl(0deg, 0%, 34%);
+
+$inset-shadow: inset 0px 2px 7px hsla(0, 0%, 0%, 0.08);
+
+//$blue-gradient: 

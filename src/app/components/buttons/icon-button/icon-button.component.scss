@@ -1,3 +1,5 @@
+@import "src/styles/base/constants";
+
 button {
     position: relative;
     width: 48px;
@@ -13,18 +15,45 @@ button {
     background: linear-gradient(#1C7CE0, hsl(256, 100%, 16%));
     cursor: pointer;
 
-    span, i {
+    .material-symbols-rounded {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        font-variation-settings: 'FILL' 1;
     }
-
-    .material-symbols-rounded {
-        font-variation-settings:
-            'FILL' 1;
+    
+    &.text-gradient
+    {
+        width: 54px;
+        height: 54px;
+        
+        border-radius: 8px;
+        background: none;
+        transition: 0.5s ease;
+        
+        .material-symbols-rounded {
+            font-size: 36px;
+            background: linear-gradient(to right, #1C7CE0, hsl(256deg, 100%, 16%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-variation-settings: 'wght' 700;
+        }
+        
+        &.red .material-symbols-rounded {
+            background: linear-gradient(to right, hsl(0, 80%, 50%), hsl(0, 100%, 26%));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        &:hover, &:focus {
+            background: $grey-100;
+            //box-shadow: $inset-shadow;
+        }
     }
-
+    
     &.rounded { border-radius: 48px; }
     &.hover { 
         transition: transform 0.25s ease-in-out;
