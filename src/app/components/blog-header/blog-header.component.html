@@ -1,10 +1,7 @@
 <div *ngIf='metadata' class='blog-head'>
     <div class='meta-left'>
         <h1 class='title no-margin'>{{metadata.title}}</h1>
-        <div class='published inset'>
-            <span class='material-symbols-rounded inset'>calendar_month</span>
-            <p class='no-margin'>{{metadata.date}}</p>
-        </div>
+        <app-info-capsule [icon]='"calendar_month"' text='{{metadata.date}}' />
         <div class='tags'>
             <a *ngFor='let tag of metadata.tags'
                routerLink='/category/{{tag.replace(" ", "").toLowerCase()}}'>{{tag}}</a>
@@ -23,16 +20,6 @@
     <div></div>
     <div class='meta-right'>
         <div></div>
-        <!--TODO: Component-->
-        <div class='read-time published inset'>
-            <span class='material-symbols-rounded inset'>schedule</span>
-            <p class='no-margin'>{{metadata.readTime}} Minutes</p>
-        </div>
+        <app-info-capsule [icon]='"schedule"' text='{{metadata.readTime}} Minutes' />
     </div>
 </div>
-<!--
-<a href='javascript:void(0)' class='title-link'>
-    <span class='link-icon material-symbols-rounded'>share</span>
-    <h1 class='title'>{{metadata.title}}</h1>
-</a>
--->

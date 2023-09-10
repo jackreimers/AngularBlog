@@ -1,0 +1,17 @@
+@import "src/styles/base/constants";
+
+.capsule {
+    display: inline-flex;
+    gap: $spacing-50;
+    padding-right: calc($spacing-100 + $spacing-25);
+
+    align-items: center;
+    background: hsl(0, 0%, 95%);
+    border-radius: 50px;
+
+    span {
+        padding: 8px;
+        border-radius: 50px;
+        background: hsl(0, 0%, 90%);
+    }
+}

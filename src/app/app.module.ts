@@ -21,6 +21,8 @@ import { BlogHeaderComponent } from "./components/blog-header/blog-header.compon
 import { ThemeService } from "./services/theme.service";
 import { ScreenService } from "./services/screen.service";
 import { BlogListComponent } from './pages/blog-list/blog-list.component';
+import { BlogCardComponent } from './components/blog-card/blog-card.component';
+import { InfoCapsuleComponent } from './components/info-capsule/info-capsule.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { BlogListComponent } from './pages/blog-list/blog-list.component';
     SideNavComponent,
     BlogHeaderComponent,
     BlogListComponent,
+    BlogCardComponent,
+    InfoCapsuleComponent,
   ],
   imports: [
     BrowserModule,

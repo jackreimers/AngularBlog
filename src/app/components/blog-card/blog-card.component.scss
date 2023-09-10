@@ -1,0 +1,38 @@
+@import "src/styles/base/constants";
+
+.root {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: $spacing-150;
+    padding: $spacing-150;
+    
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    height: 300px;
+    margin-top: 32px;
+}
+
+.left {
+    border: 1px solid lightgray;
+    border-radius: 8px;
+}
+
+.right {
+    display: grid;
+    grid-template-rows: auto auto auto 1fr auto;
+    gap: $spacing-75;
+}
+
+.tags {
+    display: flex;
+    gap: $spacing-50;
+    //margin-bottom: $spacing-75;
+    
+    a {
+        padding: $spacing-50 $spacing-100;
+
+        color: gray;
+        border: 1px solid gray;
+        border-radius: 4px;
+    }
+}

@@ -11,27 +11,7 @@
         line-height: 1;
     }
 }
-    .published {
-        display: flex;
-        gap: $spacing-50;
-        align-items: center;
-        
-        padding-right: calc($spacing-100 + $spacing-25);
-        
-        background: hsl(0, 0%, 95%);
-        border-radius: 50px;
-        
-        span {
-            padding: 8px;
-            
-            border-radius: 50px;
-            background: hsl(0, 0%, 90%);
-        }
-        
-        p {
-            
-        }
-    }
+    
 
 
 .meta-right {
