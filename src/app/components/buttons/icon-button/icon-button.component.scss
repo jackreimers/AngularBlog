@@ -5,6 +5,7 @@ button {
     width: 48px;
     height: 48px;
 
+    overflow: hidden;
     text-align: center;
     vertical-align: bottom;
 
@@ -21,6 +22,22 @@ button {
         left: 50%;
         transform: translate(-50%, -50%);
         font-variation-settings: 'FILL' 1;
+    }
+    
+    .next {
+        transform: translate(-50%, -200%);
+    }
+    
+    .change {
+        transition: transform 0.5s ease;
+        
+        &.next {
+            transform: translate(-50%, -50%);
+        }
+        
+        &.active {
+            transform: translate(-50%, 100%);
+        }
     }
     
     &.text-gradient

@@ -16,8 +16,11 @@ import { MarkdownModule } from "ngx-markdown";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { BlogComponent } from "./pages/blog/blog.component";
 import { IndexComponent } from "./pages/index/index.component";
-import { SideNavComponent } from './components/side-nav/side-nav.component';
-import { BlogHeaderComponent } from './components/blog-header/blog-header.component';
+import { SideNavComponent } from "./components/side-nav/side-nav.component";
+import { BlogHeaderComponent } from "./components/blog-header/blog-header.component";
+import { ThemeService } from "./services/theme.service";
+import { ScreenService } from "./services/screen.service";
+import { BlogListComponent } from './pages/blog-list/blog-list.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,7 @@ import { BlogHeaderComponent } from './components/blog-header/blog-header.compon
     IndexComponent,
     SideNavComponent,
     BlogHeaderComponent,
+    BlogListComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,7 @@ import { BlogHeaderComponent } from './components/blog-header/blog-header.compon
     HttpClientModule,
     MarkdownModule.forRoot({ loader: HttpClient }),
   ],
-  providers: [],
+  providers: [ThemeService, ScreenService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

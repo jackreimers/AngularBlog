@@ -1,5 +1,5 @@
 // TODO: Investigate having date parsed and typed
-export type BlogMetadata = {
+export type Metadata = {
   title: string;
   author: string;
   date: string;
@@ -7,4 +7,6 @@ export type BlogMetadata = {
 
   socialName: string;
   socialUrl: string;
+
+  readTime: number | null;
 };

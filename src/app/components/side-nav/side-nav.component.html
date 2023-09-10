@@ -1,7 +1,7 @@
 <div class="side-nav" [class.open]="menuOpen$ | async">
     <nav class="inner">
         <ul>
-            <li><app-icon-button [icon]="'close'" [classes]="'text-gradient red'" (onClick)="menuService.close()"></app-icon-button></li>
+            <li><app-icon-button [icon]="'close'" [classes]="'text-gradient red'" (onClick)="screenService.hideMenu()"></app-icon-button></li>
 
             <li><a href="javascript:void(0)" class="h4 no-margin">Home</a></li>
             <li><a href="javascript:void(0)" class="h4 no-margin">Blog</a></li>

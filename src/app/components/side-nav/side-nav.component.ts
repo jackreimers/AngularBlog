@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { MenuService } from "../../services/menu.service";
+import { ScreenService } from "../../services/screen.service";
 import { Observable } from "rxjs";
 
 @Component({
@@ -10,9 +10,9 @@ import { Observable } from "rxjs";
 export class SideNavComponent implements OnInit {
   menuOpen$: Observable<boolean> | null = null;
 
-  constructor(public menuService: MenuService) {}
+  constructor(public screenService: ScreenService) {}
 
   ngOnInit(): void {
-    this.menuOpen$ = this.menuService.isVisibleEvent;
+    this.menuOpen$ = this.screenService.isMenuVisibleEvent;
   }
 }

@@ -1,17 +1,17 @@
-import {Component, Input} from '@angular/core';
-import {ScreenBlockerService} from "../../services/screen-blocker.service";
+import { Component, Input } from "@angular/core";
+import { ScreenService } from "../../services/screen.service";
 
 @Component({
-    selector: 'app-focus-blocker',
-    templateUrl: './focus-blocker.component.html',
-    styleUrls: ['./focus-blocker.component.scss']
+  selector: "app-focus-blocker",
+  templateUrl: "./focus-blocker.component.html",
+  styleUrls: ["./focus-blocker.component.scss"],
 })
 export class FocusBlockerComponent {
-    @Input() isVisible: boolean | null = false;
-    
-    constructor(private screenBlockerService: ScreenBlockerService) {}
-    
-    raiseOnClick(): void {
-        this.screenBlockerService.close()
-    }
+  @Input() isVisible: boolean | null = false;
+
+  constructor(private screenService: ScreenService) {}
+
+  raiseOnClick(): void {
+    this.screenService.hideBlocker();
+  }
 }

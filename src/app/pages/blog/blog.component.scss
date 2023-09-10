@@ -1,0 +1,30 @@
+@import "src/styles/base/constants";
+
+.intro {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: $spacing-25;
+
+    margin: $spacing-300 0;
+
+    .border {
+        margin-right: $spacing-50;
+        width: 5px;
+        height: 100%;
+        
+        border-radius: 10px;
+    }
+    
+    markdown {
+        padding: $spacing-25 0;
+    }
+    
+    //TODO: ng-deep is deprecated, try find alternative
+    &::ng-deep p {
+        margin: 0;
+    }
+}
+
+markdown ::ng-deep h3:first-child {
+    margin-top: 0;
+}

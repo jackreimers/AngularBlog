@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Input } from "@angular/core";
-import { MenuService } from "../../services/menu.service";
+import { ScreenService } from "../../services/screen.service";
+import { ThemeService } from "../../services/theme.service";
+import { IconButtonState } from "../buttons/icon-button/icon-button-state";
 
 @Component({
   selector: "app-header",
@@ -11,10 +13,16 @@ export class HeaderComponent implements AfterViewInit {
   @Input() scrollPercentage: number | null = 0;
 
   offset: number = 0;
+  states: IconButtonState[] = [
+    { state: "dark", icon: "dark_mode" },
+    //{ state: "system", icon: "devices" },
+    { state: "light", icon: "light_mode" },
+  ];
 
   constructor(
     private elementRef: ElementRef,
-    public menuService: MenuService,
+    public themeService: ThemeService,
+    public screenService: ScreenService,
   ) {}
 
   ngAfterViewInit(): void {

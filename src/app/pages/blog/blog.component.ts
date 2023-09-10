@@ -1,8 +1,10 @@
 import { OnInit } from "@angular/core";
 import { Component } from "@angular/core";
-import { BlogPostService } from "../../services/blog-post.service";
+import { BlogService } from "../../services/blog.service";
 import { Observable } from "rxjs";
-import { BlogPost } from "../../types/blogPost";
+import { Post } from "../../types/blog/post";
+import { ThemeService } from "../../services/theme.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-blog",
@@ -10,11 +12,20 @@ import { BlogPost } from "../../types/blogPost";
   styleUrls: ["./blog.component.scss"],
 })
 export class BlogComponent implements OnInit {
-  blogPost$: Observable<BlogPost> | null = null;
+  blogPost$: Observable<Post> | null = null;
 
-  constructor(private blogService: BlogPostService) {}
+  constructor(
+    private blogService: BlogService,
+    private route: ActivatedRoute,
+    public themeService: ThemeService,
+  ) {}
 
   ngOnInit(): void {
+    //this.route.paramMap.subscribe((params) => {
+    //  const postName = params.get("post");
+    //  console.log(postName);
+    //});
+
     this.blogPost$ = this.blogService.getPost("test");
   }
 }

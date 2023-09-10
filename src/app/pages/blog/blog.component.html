@@ -1,2 +1,11 @@
-<app-blog-header [metadata]="(blogPost$ | async)?.metadata"/>
-<markdown [data]="(blogPost$ | async)?.content"/>
+<app-blog-header [metadata]='(blogPost$ | async)?.metadata ?? null' />
+<div class='intro'>
+    <div
+        class='border'
+        [ngStyle]='{"background": themeService.getGradientString("bottom")}'
+    ></div>
+    <markdown [data]='(blogPost$ | async)?.intro' />
+</div>
+<div class='body'>
+    <markdown [data]='(blogPost$ | async)?.content' />
+</div>

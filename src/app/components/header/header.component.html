@@ -1,16 +1,21 @@
-<header [ngClass]="{'scrolled' : scrollPercentage != null && this.scrollPercentage > 0}">
+<header 
+    [ngClass]="{'scrolled' : scrollPercentage != null && this.scrollPercentage > 0}"
+    [ngStyle]='{
+        "background-color": themeService.colors?.background?.cssValue, 
+        "color": themeService.colors?.primary?.cssValue, 
+    }'
+>
     <div class="fl-root content">
         <div class="fl-root fl-col">
             <div class="fl-1"></div>
-            
             <div class="fl-1"></div>
         </div>
         <div class="fl-1"></div>
         <div class="fl-root fl-col">
             <div class="fl-1"></div>
             <nav class="fl-root gap-50">
-                <app-icon-button [icon]="'dark_mode'" [classes]="'text-gradient'"></app-icon-button>
-                <app-icon-button [icon]="'menu'" [classes]="'text-gradient'" (onClick)='menuService.open()'></app-icon-button>
+                <app-icon-button [states]='states' [classes]="'text-gradient'" (onStateClick)='themeService.setTheme($event, true)'/>
+                <app-icon-button [icon]="'menu'" [classes]="'text-gradient'" (onClick)='screenService.showMenu()'/>
             </nav>
             <div class="fl-1"></div>
         </div>

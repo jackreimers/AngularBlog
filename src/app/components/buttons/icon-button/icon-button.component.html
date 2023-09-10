@@ -1,3 +1,12 @@
-<button (click)="raiseClickEvent()" class="{{classes}}">
-    <span class="material-symbols-rounded">{{icon}}</span>
-</button>
+<ng-container *ngIf='states; then multiple; else single' />
+<ng-template #multiple>
+    <button (click)='raiseStateClickEvent()' class='{{classes}}'>
+        <span [ngClass]='{"change": changingState}' class='next material-symbols-rounded'>{{nextState?.icon}}</span>
+        <span [ngClass]='{"change": changingState}' class='active material-symbols-rounded'>{{activeState?.icon}}</span>
+    </button>
+</ng-template>
+<ng-template #single>
+    <button (click)='raiseClickEvent()' class='{{classes}}'>
+        <span class='material-symbols-rounded'>{{icon}}</span>
+    </button>
+</ng-template>

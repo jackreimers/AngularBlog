@@ -1,30 +1,31 @@
-import { Injectable, Output, EventEmitter } from '@angular/core'
+import { Injectable, Output, EventEmitter } from "@angular/core";
 
+//TODO: Move to ScreenService
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class ScrollService {
-  @Output() scrollEvent = new EventEmitter<number>()
+  @Output() scrollEvent = new EventEmitter<number>();
 
   constructor() {
-    document.addEventListener('scroll', () => {
-      this.trackScroll()
-    })
+    document.addEventListener("scroll", () => {
+      this.trackScroll();
+    });
   }
 
   trackScroll(): void {
-    const root = document.documentElement
-    const body = document.body
+    const root = document.documentElement;
+    const body = document.body;
 
     const percentage =
       ((root.scrollTop || body.scrollTop) /
         ((root.scrollHeight || body.scrollHeight) - root.clientHeight)) *
-      100
+      100;
 
-    this.scrollEvent.emit(percentage)
+    this.scrollEvent.emit(percentage);
   }
 
   scrollToTop(): void {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 }

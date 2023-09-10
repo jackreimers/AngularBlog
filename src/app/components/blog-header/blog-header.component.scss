@@ -1,26 +1,71 @@
 @import "src/styles/base/constants";
 
-.blog-head {
-    margin-bottom: $spacing-400;
+//TODO: Mess! Clean up
 
+.meta-left {
+    display: inline-flex;
+    flex-direction: column;
+    gap: $spacing-75;
+
+    h1 {
+        line-height: 1;
+    }
+}
+    .published {
+        display: flex;
+        gap: $spacing-50;
+        align-items: center;
+        
+        padding-right: calc($spacing-100 + $spacing-25);
+        
+        background: hsl(0, 0%, 95%);
+        border-radius: 50px;
+        
+        span {
+            padding: 8px;
+            
+            border-radius: 50px;
+            background: hsl(0, 0%, 90%);
+        }
+        
+        p {
+            
+        }
+    }
+
+
+.meta-right {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: $spacing-50;
+    
+    .read-time {
+        
+    display: flex;
+    }
+}
+
+.blog-head {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    
     .title-link {
         display: inline-block;
         position: relative;
 
         &:hover .link-icon {
             opacity: 1;
-            transform: translate(-120%, -50%);
         }
 
         .link-icon {
             position: absolute;
             top: 50%;
 
-            font-size: 48px;
+            font-size: 40px;
             opacity: 0;
 
-            transform: translate(-50%, -50%);
-            transition: transform 0.5s ease, opacity 0.2s ease;
+            transform: translate(-120%, -50%);
+            transition: opacity 0.4s ease;
         }
 
         .title {
@@ -47,11 +92,14 @@
 
         border: 1px solid $grey-400;
         border-radius: 32px;
+        
+        background-image: url("~/src/assets/images/headshot-placeholder.png");
+        background-size: cover;
     }
 
     .tags {
         display: flex;
-        margin: $spacing-75 0;
+        margin: $spacing-25 0;
         gap: $spacing-50;
         
         a {

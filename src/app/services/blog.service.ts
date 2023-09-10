@@ -1,18 +1,19 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { BlogMetadata } from "../types/blogMetadata";
-import { BlogPost } from "../types/blogPost";
+import { Metadata } from "../types/blog/metadata";
+import { Post } from "../types/blog/post";
 import { map, Observable } from "rxjs";
+import { Frontmatter } from "../types/blog/frontmatter";
 
 @Injectable({
   providedIn: "root",
 })
-export class BlogPostService {
+export class BlogService {
   metadataRegex: RegExp = /^---([\s\S]*?)---/;
 
   constructor(private http: HttpClient) {}
 
-  getPost(postName: string): Observable<BlogPost> {
+  getPost(postName: string): Observable<Post> {
     const url = `assets/posts/${postName}.md`;
     const response = this.http.get(url, { responseType: "text" });
 
@@ -23,15 +24,34 @@ export class BlogPostService {
     );
   }
 
-  private processPostData(postData: string): BlogPost {
+  getPostFrontmatter(postName: string): Observable<Frontmatter> {
+    return this.getPost(postName).pipe(
+      map((post) => {
+        return {
+          metadata: post.metadata,
+          intro: post.intro,
+        };
+      }),
+    );
+  }
+
+  private processPostData(postData: string): Post {
     const metadata = this.getPostMetadata(postData);
-    const intro = this.getPostIntro(postData);
-    const content = this.getPostContent(postData);
+    const body = postData.split("---").pop()?.split("<!--endintro-->") || [];
+
+    const intro = body[0] ?? "";
+    const content = body[1] || "";
+
+    //Calculate time to read article
+    const introWords = intro.split(" ").length;
+    const contentWords = content.split(" ").length;
+
+    metadata.readTime = Math.ceil((introWords + contentWords) / 200);
 
     return { metadata, intro, content };
   }
 
-  private getPostMetadata(postData: string): BlogMetadata {
+  private getPostMetadata(postData: string): Metadata {
     //TODO: Log failures somewhere?
     //TODO: Test how this fails
     const matchedMetadata = postData.match(this.metadataRegex);
@@ -69,15 +89,8 @@ export class BlogPostService {
 
       socialName: mappedMetadata["social-name"],
       socialUrl: mappedMetadata["social-url"],
+
+      readTime: null,
     };
-  }
-
-  //TODO: Might be worth inlining these as calling the out of order could break things
-  private getPostIntro(postData: string): string {
-    return postData.split("<!--endintro-->")[0];
-  }
-
-  private getPostContent(postData: string): string {
-    return postData.split("---").pop() || "";
   }
 }
