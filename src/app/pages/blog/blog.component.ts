@@ -15,9 +15,9 @@ export class BlogComponent implements OnInit {
   blogPost$: Observable<Post> | null = null;
 
   constructor(
+    public themeService: ThemeService,
     private blogService: BlogService,
     private route: ActivatedRoute,
-    public themeService: ThemeService,
   ) {}
 
   ngOnInit(): void {

@@ -2,12 +2,13 @@
 
 footer {
     width: 100%;
-    margin-top: 160px;
-    border-top: 1px solid $grey-200;
+    margin-top: 100px;
+    //padding-bottom: 31.5px;
+    //border-top: 1px solid $grey-200;
 
     .container {
-        padding-top: $spacing-200;
-        padding-bottom: $spacing-200;
+        padding-top: 0;
+        padding-bottom: 0;
         gap: $spacing-200;
     }
 
@@ -18,16 +19,17 @@ footer {
 
         margin: 0 auto;
         padding: $spacing-100;
-        
-        background: hsl(0deg, 0%, 96%);
+
         border-top: 1px solid lightgray;
-        border-bottom: 1px solid lightgray;
+        //border-bottom: 1px solid lightgray;
     }
 
     .bottom {
         padding: $spacing-75;
         text-align: center;
 
-        p { font-weight: 500; }
+        p {
+            font-weight: 500;
+        }
     }
 }

@@ -11,8 +11,10 @@ export class ThemeService {
   activeThemeName: string = "";
   colors: ThemeColors | null = null;
 
+  //Equivalent to 120 refreshes per second
+  //TODO: Check that this won't cause performance issues
   readonly TRANSITION_TIME: number = 300;
-  readonly TRANSITION_INTERVAL: number = 8;
+  readonly TRANSITION_INTERVAL: number = 3.6;
 
   //TODO: Move to separate file
   readonly themes: Theme[] = [

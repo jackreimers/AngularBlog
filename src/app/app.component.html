@@ -5,7 +5,7 @@
         'color': themeService.colors?.primary?.cssValue
     }"
 >
-    <app-header [scrollPercentage]='scrollPercentage$ | async'></app-header>
+    <app-header [scrollPercentage]='scrollPercentage$ | async' />
     <app-side-nav />
     <app-focus-blocker [isVisible]='blockerIsVisible$ | async' />
     <main class='fl-1'>
@@ -14,8 +14,17 @@
         </app-container>
     </main>
     <app-footer>
-        <app-icon-button [icon]="'hourglass_empty'" [classes]="'rounded hover'" />
-        <app-icon-button [icon]="'hourglass_empty'" [classes]="'rounded hover'" />
-        <app-icon-button [icon]="'hourglass_empty'" [classes]="'rounded hover'" />
+        <a href='javascript:void(0)' class='pill-link'>
+            <div class='inner'>
+                <span class='fa fa-github'></span>
+                <p class='no-margin'>GitHub</p>
+            </div>
+        </a>
+        <a href='javascript:void(0)' class='pill-link'>
+            <div class='inner'>
+                <span class='fa-brands fa-linkedin'></span>
+                <p class='no-margin'>LinkedIn</p>
+            </div>
+        </a>
     </app-footer>
 </div>

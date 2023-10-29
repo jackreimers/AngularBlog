@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { Metadata } from "../../types/blog/metadata";
+import { ThemeService } from "../../services/theme.service";
 
 @Component({
   selector: "app-blog-header",
@@ -8,4 +9,6 @@ import { Metadata } from "../../types/blog/metadata";
 })
 export class BlogHeaderComponent {
   @Input() metadata: Metadata | null = null;
+
+  constructor(public themeService: ThemeService) {}
 }

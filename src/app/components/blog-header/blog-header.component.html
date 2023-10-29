@@ -3,10 +3,13 @@
         <h1 class='title no-margin'>{{metadata.title}}</h1>
         <app-info-capsule [icon]='"calendar_month"' text='{{metadata.date}}' />
         <div class='tags'>
-            <a *ngFor='let tag of metadata.tags'
-               routerLink='/category/{{tag.replace(" ", "").toLowerCase()}}'>{{tag}}</a>
+            <app-tag *ngFor='let tag of metadata.tags' [category]='tag'></app-tag>
         </div>
         <a href='{{metadata.socialUrl}}' class='author-box fl-root'>
+            <div
+                class='border'
+                [ngStyle]='{"background": themeService.getGradientString("bottom")}'
+            ></div>
             <div class='headshot fl-init'></div>
             <div class='fl-root author'>
                 <div></div>
@@ -20,6 +23,6 @@
     <div></div>
     <div class='meta-right'>
         <div></div>
-        <app-info-capsule [icon]='"schedule"' text='{{metadata.readTime}} Minutes' />
+        <app-info-capsule [icon]='"schedule"' text='{{metadata.readTime}} mins' />
     </div>
 </div>

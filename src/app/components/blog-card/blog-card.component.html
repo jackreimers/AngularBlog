@@ -7,11 +7,10 @@
         <app-info-capsule [icon]='"calendar_month"' [text]='"2020-01-24"'/>
         </div>
         <div class='tags'>
-            <!--TODO: Tags into component -->
-            <a href='javascript:void(0)'>Unity</a>
-            <a href='javascript:void(0)'>C#</a>
-            <a href='javascript:void(0)'>Tag</a>
-            <a href='javascript:void(0)'>.NET</a>
+            <app-tag [category]='{name: ".NET", slug: "unity"}' />
+            <app-tag [category]='{name: "C#", slug: "unity"}' />
+            <app-tag [category]='{name: "Godot", slug: "godot"}' />
+            <app-tag [category]='{name: "Game Development", slug: "game-dev"}' />
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Posuere urna nec tincidunt praesent semper feugiat nibh. In vitae turpis massa sed elementum tempus. Laoreet id donec ultrices tincidunt arcu non sodales neque sodales.</p>
         <div></div>

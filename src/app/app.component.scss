@@ -1,6 +1,35 @@
 .root {
     display: flex;
     flex-direction: column;
+    
+    min-height: 100%;
+}
 
-    height: 100%;
+.pill-link {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 2px solid hsl(0, 0%, 92%);
+    border-radius: 6px;
+    background: hsl(0, 0%, 95%);
+    transition: border-color 0.4s ease, color 0.4s ease;
+
+    .inner {
+        display: flex;
+        gap: 8px;
+        line-height: 1;
+
+        span {
+            font-size: 24px;
+        }
+        
+        p {
+            font-weight: 700;
+        }
+    }
+    
+    &:hover {
+        color: hsl(256, 100%, 16%);
+        border-color: hsl(256, 100%, 16%);
+    }
+    
 }

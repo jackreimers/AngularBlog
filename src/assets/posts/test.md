@@ -2,13 +2,14 @@
 title: Article Title
 author: Jack Reimers
 date: 2020-01-01
-tags: C#, Unity Engine, Tag, .NET
+categories: dotnet, csharp, godot, game-dev
+  
 social-name: @jack-reimers
 social-url: https://www.linkedin.com/in/jack-reimers/
 ---
 
-The introduction goes here.  
-This introduction could be multiline, who am I to say no?
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  
+Posuere urna nec tincidunt praesent semper feugiat nibh.
 
 <!--endintro-->
 

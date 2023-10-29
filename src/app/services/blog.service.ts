@@ -4,6 +4,8 @@ import { Metadata } from "../types/blog/metadata";
 import { Post } from "../types/blog/post";
 import { map, Observable } from "rxjs";
 import { Frontmatter } from "../types/blog/frontmatter";
+import { Tag } from "../types/blog/tag";
+import { tagMappings } from "../../assets/categories/tagMappings";
 
 @Injectable({
   providedIn: "root",
@@ -19,23 +21,12 @@ export class BlogService {
 
     return response.pipe(
       map((data) => {
-        return this.processPostData(data);
+        return this.getPostData(data);
       }),
     );
   }
 
-  getPostFrontmatter(postName: string): Observable<Frontmatter> {
-    return this.getPost(postName).pipe(
-      map((post) => {
-        return {
-          metadata: post.metadata,
-          intro: post.intro,
-        };
-      }),
-    );
-  }
-
-  private processPostData(postData: string): Post {
+  private getPostData(postData: string): Post {
     const metadata = this.getPostMetadata(postData);
     const body = postData.split("---").pop()?.split("<!--endintro-->") || [];
 
@@ -49,6 +40,17 @@ export class BlogService {
     metadata.readTime = Math.ceil((introWords + contentWords) / 200);
 
     return { metadata, intro, content };
+  }
+
+  getPostFrontmatter(postName: string): Observable<Frontmatter> {
+    return this.getPost(postName).pipe(
+      map((post) => {
+        return {
+          metadata: post.metadata,
+          intro: post.intro,
+        };
+      }),
+    );
   }
 
   private getPostMetadata(postData: string): Metadata {
@@ -85,12 +87,26 @@ export class BlogService {
       title: mappedMetadata["title"],
       author: mappedMetadata["author"],
       date: mappedMetadata["date"],
-      tags: mappedMetadata["tags"].split(","),
+      tags: this.parseTags(mappedMetadata["categories"]),
 
       socialName: mappedMetadata["social-name"],
       socialUrl: mappedMetadata["social-url"],
 
+      //This is set later as we don't have access to the content in this function
+      //TODO: Get all metadata in one go
       readTime: null,
     };
+  }
+
+  private parseTags(tags: string): Tag[] {
+    const split = tags.split(",");
+    return split.map((tag) => {
+      tag = tag.trim();
+
+      return {
+        name: tagMappings.find((i) => i.slug == tag)?.name ?? tag,
+        slug: tag,
+      };
+    });
   }
 }

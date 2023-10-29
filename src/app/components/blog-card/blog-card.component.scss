@@ -6,15 +6,19 @@
     gap: $spacing-150;
     padding: $spacing-150;
     
-    border: 1px solid lightgray;
+    //border: 1px solid lightgray;
     border-radius: 8px;
     height: 300px;
     margin-top: 32px;
+    
+    background: hsl(0, 0%, 97%);
 }
 
 .left {
     border: 1px solid lightgray;
     border-radius: 8px;
+    
+    background: hsl(0, 0%, 100%);
 }
 
 .right {

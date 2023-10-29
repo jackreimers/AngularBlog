@@ -20,9 +20,10 @@ import { SideNavComponent } from "./components/side-nav/side-nav.component";
 import { BlogHeaderComponent } from "./components/blog-header/blog-header.component";
 import { ThemeService } from "./services/theme.service";
 import { ScreenService } from "./services/screen.service";
-import { BlogListComponent } from './pages/blog-list/blog-list.component';
-import { BlogCardComponent } from './components/blog-card/blog-card.component';
-import { InfoCapsuleComponent } from './components/info-capsule/info-capsule.component';
+import { BlogListComponent } from "./pages/blog-list/blog-list.component";
+import { BlogCardComponent } from "./components/blog-card/blog-card.component";
+import { InfoCapsuleComponent } from "./components/info-capsule/info-capsule.component";
+import { TagComponent } from "./components/tag/tag.component";
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { InfoCapsuleComponent } from './components/info-capsule/info-capsule.com
     BlogListComponent,
     BlogCardComponent,
     InfoCapsuleComponent,
+    TagComponent,
   ],
   imports: [
     BrowserModule,
